@@ -27,11 +27,15 @@ export default function Home() {
       <div className="w-[100%] h-[100%] items-center justify-center flex">
         <div>
           <div className="stroke-black drop-shadow-[0px_1px_1px_rgba(0,0,0,0.400)]">
-            <img src="logo.svg" className="w-[10rem] h-[2rem] " alt="" />
-            <h3 className="italic text-[1.6rem] tracking-wide text-gray-600 font-[ui-sans-serif] pb-3 ">
-              Intern's Work Search
-            </h3>
+            <img
+              src="logo.svg"
+              className="w-[10rem] h-[2rem] "
+              alt="LogoSiemens"
+            />
           </div>
+          <h3 className="italic text-[1.6rem] tracking-wide text-gray-600 font-[ui-sans-serif] pb-3 ">
+            Intern's Work Search
+          </h3>
           <div>
             <input
               className="rounded-md p-2 w-[50rem]"
