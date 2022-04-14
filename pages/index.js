@@ -18,7 +18,7 @@ export default function Home() {
       <div className="h-[88.8vh] w-[100%] absolute z-[-1]">
         <img
           src="proj.png"
-          className={"h-[88.8vh] w-[100%]"}
+          className={"h-[88.8vh] w-[100%] "}
           width="100vw"
           height="100%"
           alt=""
@@ -26,9 +26,9 @@ export default function Home() {
       </div>
       <div className="w-[100%] h-[100%] items-center justify-center flex">
         <div>
-          <div>
+          <div className="stroke-black drop-shadow-[0px_1px_1px_rgba(0,0,0,0.400)]">
             <img src="logo.svg" className="w-[10rem] h-[2rem] " alt="" />
-            <h3 className="italic text-[1.6rem] tracking-wide text-gray-600 font-[ui-sans-serif] pb-3">
+            <h3 className="italic text-[1.6rem] tracking-wide text-gray-600 font-[ui-sans-serif] pb-3 ">
               Intern's Work Search
             </h3>
           </div>
