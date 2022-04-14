@@ -21,7 +21,7 @@ export default function Home() {
           className={"h-[88.8vh] w-[100%] "}
           width="100vw"
           height="100%"
-          alt=""
+          alt="Siemens"
         />
       </div>
       <div className="w-[100%] h-[100%] items-center justify-center flex">
