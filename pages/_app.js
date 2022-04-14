@@ -1,7 +1,17 @@
-import '../styles/globals.css'
-
+import FloatingButton from "../components/mainComponents/floatingButton";
+import Navbar from "../components/mainComponents/navbar";
+import "../styles/globals.css";
+import Context from "../context/accessacc";
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Context>
+        <Navbar />
+        <FloatingButton enable={false} />
+        <Component {...pageProps} />
+      </Context>
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
