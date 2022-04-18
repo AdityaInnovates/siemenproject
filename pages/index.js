@@ -16,18 +16,20 @@ export default function Home() {
         />
       </Head>
       <div className="h-[88.8vh] w-[100%] absolute z-[-1]">
-        <img
+        {/* <img
+          crossOrigin="anonymous"
           src="proj.png"
           className={"h-[88.8vh] w-[100%] "}
           width="100vw"
           height="100%"
           alt="Siemens"
-        />
+        /> */}
       </div>
       <div className="w-[100%] h-[100%] items-center justify-center flex">
         <div>
           <div className="stroke-black drop-shadow-[0px_1px_1px_rgba(0,0,0,0.400)]">
             <img
+              crossOrigin="anonymous"
               src="logo.svg"
               className="w-[10rem] h-[2rem] "
               alt="LogoSiemens"
@@ -38,16 +40,17 @@ export default function Home() {
           </h3>
           <div>
             <input
-              className="rounded-md p-2 w-[50rem]"
+              className="rounded-md p-2 w-[50rem] border-2 border-black"
               type="text"
               placeholder="Search Here..."
             />
           </div>
-          <div className="w-[100%] flex justify-center gap-[1rem]">
-            <button className="bg-green-400 rounded-md py-2 px-8 mt-5 hover:bg-green-500 hover:rounded-3xl transition-all duration-300">
+          <div className="w-[100%] flex justify-center gap-[4rem] mt-1">
+            <button className="bg-green-500 rounded-md py-2 px-8 mt-5 text-white hover:bg-green-600 hover:rounded-3xl transition-all duration-300">
               Search
             </button>
-            <button className="bg-[#EAB543] rounded-md py-2 px-8 mt-5 hover:bg-[#d3a33b] hover:rounded-3xl transition-all duration-300">
+            <button className="bg-green-500 rounded-md py-2 px-8 mt-5 text-white hover:bg-green-600 hover:rounded-3xl transition-all duration-300">
+              {/* <button className="bg-[#EAB543] rounded-md py-2 px-8 mt-5 hover:bg-[#d3a33b] hover:rounded-3xl transition-all duration-300"> */}
               Explore
             </button>
           </div>

@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { User } from "../../context/allcontexts";
+import router from "next/router";
 
 const FloatingButton = (props) => {
   const { canGoBack, setcanGoBack } = useContext(User);
@@ -12,19 +13,22 @@ const FloatingButton = (props) => {
           <div
             className="p-5 pointer-events-auto cursor-pointer"
             onClick={() => {
-              if (!loading) {
-                setcanGoBack(canGoBack ? false : true);
+              if (canGoBack) {
+              } else {
+                router.push("/submitTask");
               }
             }}
           >
             {canGoBack ? (
               <img
+                crossOrigin="anonymous"
                 className="w-[2rem]  invert pointer-events-auto"
                 src="left-arrow.svg"
                 alt=""
               />
             ) : (
               <img
+                crossOrigin="anonymous"
                 className="w-[2rem] rotate-45 invert pointer-events-auto"
                 src="close-cross.svg"
                 alt=""
