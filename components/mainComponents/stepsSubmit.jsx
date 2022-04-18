@@ -12,6 +12,20 @@ const IndexPage = () => {
   }, []);
 
   const { watch } = useForm();
+  let verifyInput = () => {
+    for (let i = 0; i < 5; i++) {
+      if (i === formStep) {
+        if (
+          String(document.getElementsByClassName(`inputProjdata${i}`)[0].value)
+            .length > 1
+        ) {
+          setFormStep((cur) => cur + 1);
+        } else {
+          alert("Please Enter Desirable Data");
+        }
+      }
+    }
+  };
   const completeFormStep = () => {
     setFormStep((cur) => cur + 1);
   };
@@ -31,7 +45,7 @@ const IndexPage = () => {
     } else {
       return (
         <button
-          onClick={completeFormStep}
+          onClick={verifyInput}
           type="button"
           className="mt-6 bg-green-500 hover:bg-green-600 text-white rounded px-8 py-6 w-full disabled:bg-gray-400 disabled:cursor-not-allowed"
         >
@@ -56,8 +70,37 @@ const IndexPage = () => {
         <p className="text-green-200 mt-2">Submit your project here !!</p>
       </div>
       <div className="max-w-xl w-full mt-24 mb-24 rounded-lg shadow-2xl bg-white mx-auto overflow-hidden z-10">
-        <div className="px-5 py-10 md:px-16  h-[30vh] md:h-[45vh] overflow-y-auto">
-          <form className="h-[auto]">
+        <div className="px-5 py-6 md:px-16  h-[34vh] md:h-[47vh] overflow-y-auto">
+          <form
+            className="h-[auto]"
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
+            {formStep < 6 ? (
+              <div className=" pb-2 ">
+                <span
+                  className="flex opacity-50 hover:opacity-100 w-max cursor-pointer"
+                  onClick={() => {
+                    if (formStep > 0) {
+                      setFormStep((current) => current - 1);
+                    }
+                  }}
+                >
+                  <img
+                    className=" cursor-pointer "
+                    width={11}
+                    height={11}
+                    src="left-arrow.svg"
+                    alt=""
+                  />
+
+                  <div className="pl-3">Step {formStep + 1} of 6</div>
+                </span>
+              </div>
+            ) : (
+              ""
+            )}
             {formStep === 0 && (
               <section>
                 <h2 className="font-semibold text-3xl mb-8">
@@ -68,7 +111,7 @@ const IndexPage = () => {
                   type="text"
                   id="Contributor's Name"
                   name="Contributor's Name"
-                  className="text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
+                  className="inputProjdata0 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
                   placeholder="Contributor's Name"
                 />
               </section>
@@ -81,7 +124,7 @@ const IndexPage = () => {
                   type="text"
                   id="Mentor"
                   name="Mentor"
-                  className="text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
+                  className="inputProjdata1 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
                   placeholder="Mentor"
                 />
               </section>
@@ -94,7 +137,7 @@ const IndexPage = () => {
                   type="text"
                   id="Project Name"
                   name="Project Name"
-                  className="text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
+                  className="inputProjdata2 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
                   placeholder="Project Name"
                 />
               </section>
@@ -107,7 +150,7 @@ const IndexPage = () => {
                   type="text"
                   id="Description"
                   name="Short Description"
-                  className="text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
+                  className="inputProjdata3 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
                   placeholder="Short Description"
                 />
               </section>
@@ -120,7 +163,7 @@ const IndexPage = () => {
                   type="text"
                   id="keywords"
                   name="Tags/Keywords"
-                  className="text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
+                  className="inputProjdata4 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
                   placeholder="Tags/Keywords"
                 />
               </section>
