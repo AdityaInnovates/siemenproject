@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Context>
         <Navbar />
-        <FloatingButton enable={false} />
+        <FloatingButton />
         <Component {...pageProps} />
       </Context>
     </>

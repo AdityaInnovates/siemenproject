@@ -8,12 +8,13 @@ const FloatingButton = (props) => {
   const [loading, setloading] = useState(props.loading ? props.loading : false);
   return (
     <>
-      <div className="fixed flex justify-end items-end w-[100%] h-[88.8%] pointer-events-none">
+      <div className="fixed flex justify-end items-end w-[100%] h-[88.8%] pointer-events-none z-10">
         <div className="mb-[3rem] mr-[3rem] bg-black rounded-[100%] pointer-events-auto">
           <div
             className="p-5 pointer-events-auto cursor-pointer"
             onClick={() => {
               if (canGoBack) {
+                router.push("/");
               } else {
                 router.push("/submitTask");
               }

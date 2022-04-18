@@ -1,7 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
+import { useContext } from "react";
+import { User } from "../context/allcontexts";
 
 export default function Home() {
+  const { canGoBack, setcanGoBack } = useContext(User);
+  setcanGoBack(false);
   return (
     <div className="h-[88.8vh] w-[100%] ">
       <Head>
