@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useForm } from "react-hook-form";
 
 const IndexPage = () => {
   const [formStep, setFormStep] = React.useState(0);
@@ -11,7 +10,6 @@ const IndexPage = () => {
     };
   }, []);
 
-  const { watch } = useForm();
   let verifyInput = () => {
     for (let i = 0; i < 5; i++) {
       if (i === formStep) {
