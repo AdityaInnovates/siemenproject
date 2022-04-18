@@ -56,8 +56,8 @@ const IndexPage = () => {
         <p className="text-green-200 mt-2">Submit your project here !!</p>
       </div>
       <div className="max-w-xl w-full mt-24 mb-24 rounded-lg shadow-2xl bg-white mx-auto overflow-hidden z-10">
-        <div className="px-16 py-10">
-          <form>
+        <div className="px-5 py-10 md:px-16  h-[30vh] md:h-[45vh] overflow-y-auto">
+          <form className="h-[auto]">
             {formStep === 0 && (
               <section>
                 <h2 className="font-semibold text-3xl mb-8">

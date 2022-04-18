@@ -44,7 +44,7 @@ export default function Home() {
           </h3>
           <div>
             <input
-              className="rounded-md p-2 w-[50rem] border-2 border-black"
+              className="rounded-md p-2 w-[80vw] border-2 border-black"
               type="text"
               placeholder="Search Here..."
             />
