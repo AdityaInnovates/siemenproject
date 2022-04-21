@@ -5,16 +5,16 @@ const Navbar = () => {
   return (
     <>
       <div className="">
-        <div className="w-[100%] h-[4.5rem] drop-shadow-sm">
+        <div className="w-[100%] h-[3.8rem] drop-shadow-sm">
           <div>
-            <div className=" w-[100%] h-[4.5rem] fixed bg-white">
-              <div className="h-[4.5rem] flex justify-between items-center p-auto max-w-[98vw]">
+            <div className=" w-[100%] h-[3.8rem] fixed bg-white">
+              <div className="h-[3.8rem] flex justify-between items-center p-auto max-w-[98vw]">
                 <div>
                   <Link href={"/"}>
                     <img
                       crossOrigin="anonymous"
-                      src="logo.svg"
-                      className="cursor-pointer  w-[10rem] h-[2rem] mt-[2rem] ml-[.8rem] "
+                      src="/logo.svg"
+                      className="cursor-pointer  w-[10rem] h-[2rem] ml-[.8rem] "
                       alt=""
                     />
                   </Link>

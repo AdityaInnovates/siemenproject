@@ -9,51 +9,8 @@ const IndexPage = () => {
       document.body.style.backgroundColor = "#fff";
     };
   }, []);
-
-  let verifyInput = () => {
-    for (let i = 0; i < 5; i++) {
-      if (i === formStep) {
-        if (
-          String(document.getElementsByClassName(`inputProjdata${i}`)[0].value)
-            .length > 1
-        ) {
-          setFormStep((cur) => cur + 1);
-        } else {
-          alert("Please Enter Desirable Data");
-        }
-      }
-    }
-  };
-  const completeFormStep = () => {
-    setFormStep((cur) => cur + 1);
-  };
-  const renderButton = () => {
-    if (formStep > 5) {
-      return undefined;
-    } else if (formStep === 5) {
-      return (
-        <button
-          onClick={completeFormStep}
-          type="button"
-          className="mt-6 bg-green-500 hover:bg-green-600 text-white rounded px-8 py-6 w-full disabled:bg-gray-400 disabled:cursor-not-allowed"
-        >
-          Submit
-        </button>
-      );
-    } else {
-      return (
-        <button
-          onClick={verifyInput}
-          type="button"
-          className="mt-6 bg-green-500 hover:bg-green-600 text-white rounded px-8 py-6 w-full disabled:bg-gray-400 disabled:cursor-not-allowed"
-        >
-          Next
-        </button>
-      );
-    }
-  };
   return (
-    <div className="h-[88.8vh] bg-green-900 flex flex-col items-start text-gray-900 antialiased relative">
+    <div className="h-[95vh] bg-green-900 flex flex-col items-start text-gray-900 antialiased relative">
       <div
         style={{
           clipPath: "polygon(0 0, 100% 0, 100% 80%, 0% 100%)",
@@ -75,146 +32,65 @@ const IndexPage = () => {
               e.preventDefault();
             }}
           >
-            {formStep < 6 ? (
-              <div className=" pb-2 ">
-                <span
-                  className="flex opacity-50 hover:opacity-100 w-max cursor-pointer"
-                  onClick={() => {
-                    if (formStep > 0) {
-                      setFormStep((current) => current - 1);
-                    }
-                  }}
-                >
-                  <img
-                    className=" cursor-pointer "
-                    width={11}
-                    height={11}
-                    src="left-arrow.svg"
-                    alt=""
-                  />
+            <section>
+              <h2 className="font-semibold text-xl my-5">
+                Personal Information
+              </h2>
+              <label htmlFor="Contributor's name"></label>
+              <input
+                type="text"
+                id="Contributor's Name"
+                name="Contributor's Name"
+                className="inputProjdata0 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
+                placeholder="Contributor's Name"
+              />
 
-                  <div className="pl-3">Step {formStep + 1} of 6</div>
-                </span>
-              </div>
-            ) : (
-              ""
-            )}
-            {formStep === 0 && (
-              <section>
-                <h2 className="font-semibold text-3xl mb-8">
-                  Personal Information
-                </h2>
-                <label htmlFor="Contributor's name"></label>
-                <input
-                  type="text"
-                  id="Contributor's Name"
-                  name="Contributor's Name"
-                  className="inputProjdata0 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
-                  placeholder="Contributor's Name"
-                />
-              </section>
-            )}
-            {formStep === 1 && (
-              <section>
-                <h2 className="font-semibold text-3xl mb-8">Mentor Details</h2>
-                <label htmlFor="Mentor"></label>
-                <input
-                  type="text"
-                  id="Mentor"
-                  name="Mentor"
-                  className="inputProjdata1 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
-                  placeholder="Mentor"
-                />
-              </section>
-            )}
-            {formStep === 2 && (
-              <section>
-                <h2 className="font-semibold text-3xl mb-8">Project Details</h2>
-                <label htmlFor="Project Name"></label>
-                <input
-                  type="text"
-                  id="Project Name"
-                  name="Project Name"
-                  className="inputProjdata2 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
-                  placeholder="Project Name"
-                />
-              </section>
-            )}
-            {formStep === 3 && (
-              <section>
-                <h2 className="font-semibold text-3xl mb-8">Description</h2>
-                <label htmlFor="Description"></label>
-                <input
-                  type="text"
-                  id="Description"
-                  name="Short Description"
-                  className="inputProjdata3 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
-                  placeholder="Short Description"
-                />
-              </section>
-            )}
-            {formStep === 4 && (
-              <section>
-                <h2 className="font-semibold text-3xl mb-8">Description</h2>
-                <label htmlFor="Keywords"></label>
-                <input
-                  type="text"
-                  id="keywords"
-                  name="Tags/Keywords"
-                  className="inputProjdata4 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
-                  placeholder="Tags/Keywords"
-                />
-              </section>
-            )}
-            {formStep === 5 && (
-              <section>
-                <h2 className="font-semibold text-3xl mb-8">
-                  Legal Information
-                </h2>
-                <div className="block mt-6">
-                  <input
-                    name="toc"
-                    className="p-3 text-green-600 rounded mr-3 border-2 border-gray-300 ring-0 focus:ring-0 focus:ring-offset-0 focus:border-0 cursor-pointer"
-                    type="checkbox"
-                  />
-                  <span>
-                    I accept the{" "}
-                    <a className="text-blue-400 underline" href="/">
-                      Terms and Conditions
-                    </a>
-                    .
-                  </span>
-                </div>
-                <div className="block mt-6">
-                  <input
-                    name="pp"
-                    className="p-3 text-green-600 rounded mr-3 border-2 border-gray-300 ring-0 focus:ring-0 focus:ring-offset-0 focus:border-0 cursor-pointer"
-                    type="checkbox"
-                  />
-                  <span>
-                    I accept the{" "}
-                    <a className="text-blue-400 underline" href="/">
-                      Privacy Policy
-                    </a>
-                    .
-                  </span>
-                </div>
-              </section>
-            )}
-            {formStep === 6 && (
-              <section>
-                <h2 className="font-semibold text-3xl mb-8">
-                  Thank you for submitting the project
-                </h2>
-                <h3 className="font-semibold mb-8">
-                  The Project has been submitted for approval,once approved the
-                  project will be visible to search. In case the project is not
-                  approved in 7 days,please contact{" "}
-                  <u>fakabbir.amin@siemens.com</u>.
-                </h3>
-              </section>
-            )}
-            {renderButton()}
+              <h2 className="font-semibold text-xl my-5">Mentor Details</h2>
+              <label htmlFor="Mentor"></label>
+              <input
+                type="text"
+                id="Mentor"
+                name="Mentor"
+                className="inputProjdata1 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
+                placeholder="Mentor"
+              />
+
+              <h2 className="font-semibold text-xl my-5">Project Details</h2>
+              <label htmlFor="Project Name"></label>
+              <input
+                type="text"
+                id="Project Name"
+                name="Project Name"
+                className="inputProjdata2 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
+                placeholder="Project Name"
+              />
+
+              <h2 className="font-semibold text-xl my-5">Description</h2>
+              <label htmlFor="Description"></label>
+              <input
+                type="text"
+                id="Description"
+                name="Short Description"
+                className="inputProjdata3 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
+                placeholder="Short Description"
+              />
+
+              <h2 className="font-semibold text-xl my-5">Tags</h2>
+              <label htmlFor="Keywords"></label>
+              <input
+                type="text"
+                id="keywords"
+                name="Tags/Keywords"
+                className="inputProjdata4 text-input outline-none bg-gray-100 w-[100%] p-4 rounded-md"
+                placeholder="Tags/Keywords"
+              />
+            </section>
+            <button
+              type="button"
+              className="mt-6 bg-green-500 hover:bg-green-600 text-white rounded px-8 py-6 w-full disabled:bg-gray-400 disabled:cursor-not-allowed"
+            >
+              Submit
+            </button>
           </form>
         </div>
       </div>

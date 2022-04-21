@@ -24,14 +24,14 @@ const FloatingButton = (props) => {
               <img
                 crossOrigin="anonymous"
                 className="w-[2rem]  invert pointer-events-auto"
-                src="left-arrow.svg"
+                src="/left-arrow.svg"
                 alt=""
               />
             ) : (
               <img
                 crossOrigin="anonymous"
                 className="w-[2rem] rotate-45 invert pointer-events-auto"
-                src="close-cross.svg"
+                src="/close-cross.svg"
                 alt=""
               />
             )}

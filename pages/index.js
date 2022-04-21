@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { useContext } from "react";
 import { User } from "../context/allcontexts";
+import Link from "next/link";
 
 export default function Home() {
   const { canGoBack, setcanGoBack } = useContext(User);
@@ -53,10 +54,12 @@ export default function Home() {
             <button className="bg-green-500 rounded-md py-2 px-8 mt-5 text-white hover:bg-green-600 hover:rounded-3xl transition-all duration-300">
               Search
             </button>
-            <button className="bg-green-500 rounded-md py-2 px-8 mt-5 text-white hover:bg-green-600 hover:rounded-3xl transition-all duration-300">
-              {/* <button className="bg-[#EAB543] rounded-md py-2 px-8 mt-5 hover:bg-[#d3a33b] hover:rounded-3xl transition-all duration-300"> */}
-              Explore
-            </button>
+            <Link href={"dataRepresent"}>
+              <a className="bg-green-500 rounded-md py-2 px-8 mt-5 text-white hover:bg-green-600 hover:rounded-3xl transition-all duration-300">
+                {/* <button className="bg-[#EAB543] rounded-md py-2 px-8 mt-5 hover:bg-[#d3a33b] hover:rounded-3xl transition-all duration-300"> */}
+                Explore
+              </a>
+            </Link>
           </div>
         </div>
       </div>
