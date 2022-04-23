@@ -59,15 +59,17 @@ export default function Home() {
             </div>
             <div className="w-[100%] flex justify-center gap-[4rem] mt-1">
               <a
-                onClick={() => {
-                  Router.push({
-                    pathname: "/mainPanel",
-                    query: {
-                      value: document.getElementById("mainSearchInp").value,
-                    },
-                  });
+                onClick={(e) => {
+                  if (document.getElementById("mainSearchInp").value) {
+                    Router.push({
+                      pathname: "/mainPanel",
+                      query: {
+                        value: document.getElementById("mainSearchInp").value,
+                      },
+                    });
+                  }
                 }}
-                className="bg-green-500 rounded-md py-2 px-8 mt-5 text-white hover:bg-green-600 hover:rounded-3xl transition-all duration-300"
+                className="bg-green-500 cursor-pointer rounded-md py-2 px-8 mt-5 text-white hover:bg-green-600 hover:rounded-3xl transition-all duration-300"
               >
                 Search
               </a>

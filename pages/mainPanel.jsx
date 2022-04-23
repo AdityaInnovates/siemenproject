@@ -3,7 +3,7 @@ import DataWithAside from "../components/mainComponents/dataWithAside";
 import AsideNav from "../components/subComponents/asideNav";
 import Router from "next/router";
 
-const MainPanel = () => {
+const MainPanel = (props) => {
   const [year, setyear] = useState("All");
   const [maturity, setmaturity] = useState("All");
   const [searchFor, setsearchFor] = useState("All");
@@ -118,7 +118,7 @@ const MainPanel = () => {
   useEffect(() => {
     if (!dis) {
       alert(
-        `We Are Unable To Search For ("${Router.query.value}") Bcz We Don't Have Of Backend Data`
+        `We Are Unable To Search For ("${props.query.value}") Bcz We Don't Have Backend Data`
       );
       alert("insted Searching For Text Processing");
       dis = true;
@@ -240,5 +240,10 @@ const MainPanel = () => {
     </>
   );
 };
+export async function getServerSideProps({ query }) {
+  return {
+    props: { query },
+  };
+}
 
 export default MainPanel;

@@ -1,4 +1,5 @@
 import React from "react";
+import Router from "next/router";
 
 const DataWithAside = (props) => {
   var dataarr = props.data || props.code || props.peoples;
@@ -22,7 +23,19 @@ const DataWithAside = (props) => {
             ? dataarr.map((el) => {
                 return (
                   <>
-                    <div className="group cursor-pointer w-max">
+                    <div
+                      className="group cursor-pointer w-max"
+                      onClick={() => {
+                        Router.push({
+                          pathname: "codeRepo",
+                          query: {
+                            title: el.title,
+                            description: el.description,
+                            lang: el.lang || "Not Specified!",
+                          },
+                        });
+                      }}
+                    >
                       <div className="flex align-baseline items-baseline">
                         <svg
                           aria-hidden="true"
