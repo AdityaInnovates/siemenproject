@@ -24,8 +24,8 @@ const IndexPage = () => {
         </h1>
         <p className="text-green-200 mt-2">Submit your project here !!</p>
       </div>
-      <div className=" px-[10rem] w-full mt-5 mb-[2rem] rounded-lg shadow-2xl  overflow-hidden z-10">
-        <div className="px-5 md:px-16 h-[40vh]  md:h-[68vh] w-full rounded-2xl bg-white">
+      <div className=" px-[10rem] pointer-events-none w-full mt-5 mb-[2rem] rounded-lg shadow-2xl  overflow-hidden z-10">
+        <div className="px-5 md:px-16 h-[40vh]  pointer-events-auto md:h-[68vh] w-full rounded-2xl bg-white">
           <form
             className="h-[auto]"
             onSubmit={(e) => {
