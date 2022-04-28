@@ -10,7 +10,20 @@ const DataWithAside = (props) => {
           {props.data
             ? dataarr.map((el) => {
                 return (
-                  <div key={el.title} className="group cursor-pointer w-max">
+                  <div
+                    key={el.title}
+                    className="group cursor-pointer w-max"
+                    onClick={() => {
+                      Router.push({
+                        pathname: "codeRepo",
+                        query: {
+                          title: el.title,
+                          description: el.description,
+                          lang: el.lang || "Not Specified!",
+                        },
+                      });
+                    }}
+                  >
                     <h3>{el.link}</h3>
                     <h3 className="text-blue-800 font-medium text-xl group-hover:underline">
                       {el.title}
