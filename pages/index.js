@@ -52,7 +52,7 @@ export default function Home() {
             <div>
               <input
                 id="mainSearchInp"
-                className="rounded-md p-2 w-[80vw] border-2 outline-none bg-slate-100"
+                className=" p-2 w-[80vw] border-2 outline-none border-[#009999] bg-slate-100"
                 type="text"
                 placeholder="Search Here..."
               />
