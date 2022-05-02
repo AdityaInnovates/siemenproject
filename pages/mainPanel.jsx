@@ -158,7 +158,7 @@ const MainPanel = (props) => {
         <div className="w-full mt-5">
           <div className="flex ml-10">
             <input
-              className="border-2 border-slate-400 rounded-md p-2 w-[50rem]"
+              className="border-2 border-slate-400 rounded-md p-2 w-[80vw]"
               type="text"
               value={searchData}
               onChange={() => {

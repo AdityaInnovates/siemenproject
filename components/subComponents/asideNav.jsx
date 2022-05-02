@@ -35,10 +35,20 @@ const AsideNav = (props) => {
                       .each((ind, el) => {
                         el.removeAttribute("style");
                       });
+                    $(e.currentTarget)
+                      .parent()
+                      .children()
+                      .each((ind, el) => {
+                        el.firstChild.firstChild.checked = false;
+                      });
+                    e.currentTarget.firstChild.firstChild.checked = true;
                     e.currentTarget.style.backgroundColor = "#e5e7eb";
                   }}
                 >
-                  <h3 className="mb-1.5 mt-1 cursor-pointer">{el}</h3>
+                  <div className="flex items-baseline gap-2">
+                    <input type="checkbox" />
+                    <h3 className="mb-1.5 mt-1 cursor-pointer">{el}</h3>
+                  </div>
                   <hr className="w-[100%]" />
                 </li>
               );
