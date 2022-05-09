@@ -34,9 +34,26 @@ const Main = () => {
               <div>Company</div>
             </div>
             <div className="mr-3">
-              <Switch onChange={settoggle1} checked={toggle1} />
+              <div className="flex gap-[.5rem] items-center">
+                <div>{toggle1 ? <h3>Enabled AI</h3> : ""}</div>
+                <Switch onChange={settoggle1} checked={toggle1} />
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="px-[10rem] py-[1rem]">
+        <div>
+          {toggle1 ? (
+            <input
+              id="mainSearchInp"
+              className=" p-2 w-[80vw] border-2 outline-none border-[#009999] bg-slate-100"
+              type="text"
+              placeholder="Search Here..."
+            />
+          ) : (
+            ""
+          )}
         </div>
       </div>
       <div>
